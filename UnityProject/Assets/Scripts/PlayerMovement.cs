@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector3(movementSpeed * HorizontalInput, rb.velocity.y, jumpSpeed * VerticalInput);
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && is_grounded())
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, rb.velocity.z);
         }
