@@ -8,7 +8,7 @@ public class WaypointerFollo : MonoBehaviour
     [SerializeField] GameObject[] waypointers;
     int currentWayPointer = 0;
 
-    [SerializeField] float speed = 1f;
+    [SerializeField] float speed = 5f;
  
     void Start()
     {
