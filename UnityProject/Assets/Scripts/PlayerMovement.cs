@@ -28,8 +28,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy Head"))
+        {
+            Destroy(collision.transform.parent.gameObject);
+            rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, rb.velocity.z);
+        }
+    }
+      
+
     bool is_grounded()
     {
-        return Physics.CheckSphere(groundCheck.position, 0.1f, ground);
+        return Physics.CheckSphere(groundCheck.position, 0.1f, ground); 
     }
 }
