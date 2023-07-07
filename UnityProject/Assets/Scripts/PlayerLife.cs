@@ -13,6 +13,14 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        if(transform.position.y < -1f)
+        {
+            Die();
+        }
+    }
+
     void Die()
     {
         GetComponent<Rigidbody>().isKinematic = true;
